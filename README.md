@@ -40,6 +40,7 @@ The message format is like so:
 
 Where type string is one of:
 
+* connect
 * up
 * down
 * left
@@ -47,3 +48,4 @@ Where type string is one of:
 * dig
 * descend
 * climb
+
