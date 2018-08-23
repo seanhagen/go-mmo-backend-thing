@@ -10,12 +10,16 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+const boardSize = 50
+
 type tile struct {
 }
 
 type gameState struct {
 	nextPlayerId int
 	npidmu       *sync.Mutex
+
+	board [boardSize][boardSize]tile
 }
 
 type playerInMsg struct {
@@ -42,6 +46,7 @@ func main() {
 	// gsChan := make(chan gameState)
 	// gsMu := &sync.Mutex{}
 
+	// outState := map[int]chan gameState{}
 	outMsgChans := map[int]chan playerOutMsg{}
 	inMsgChans := map[int]chan *playerInMsg{}
 
