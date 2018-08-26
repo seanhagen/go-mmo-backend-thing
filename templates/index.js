@@ -12,14 +12,14 @@ function myWebsocketStart() {
 
   ws.onmessage = function(evt) {
     console.log("websocket event recieved: ", evt);
-    var myTextArea = document.getElementById("textarea1");
-    myTextArea.value = myTextArea.value + "\n" + evt.data;
-    ws.send(JSON.stringify({ type: "up" }));
-    if (evt.data == "pong") {
-      setTimeout(function() {
-        ws.send(JSON.stringify({ type: "dig" }));
-      }, 2000);
-    }
+    // var myTextArea = document.getElementById("textarea1");
+    // myTextArea.value = myTextArea.value + "\n" + evt.data;
+    // ws.send(JSON.stringify({ type: "up" }));
+    // if (evt.data == "pong") {
+    //   setTimeout(function() {
+    //     ws.send(JSON.stringify({ type: "dig" }));
+    //   }, 2000);
+    // }
   };
 
   ws.onclose = function() {
